@@ -20,8 +20,8 @@ router.post('/', function(req, res) {
   }
 
   /*  
-   * "curl -d" sends data as urlencoded key-value.
-   * This means curl <url> -d 'my message' actually sends 'my message' as the key, with an empty value.
+   * "curl -d" sends data as urlencoded.
+   * This means curl <url> -d 'my message' will be handled by express as a key-value pair, with no value.
    * Object.keys used on body to handle this. 
    * Included option to post raw text as well. E.g. curl -X POST -H 'Content-Type: text/plain' -d 'my message'
   */
