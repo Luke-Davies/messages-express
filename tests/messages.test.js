@@ -131,6 +131,12 @@ describe("/messages", function() {
                     .expect(testMessages.find((msg) => msg.id == 900).text, done);
             });
 
+            it('returns 400 when msgId not an integer', function(done) {
+                request
+                    .get('/messages/test')
+                    .expect(400,done)
+            });
+
             it('returns 404 when not found', function(done) {
                 request
                     .get('/messages/800')

@@ -51,8 +51,14 @@ router.delete('/', function(req, res) {
 
 /* Fetch a message by it's id */
 router.get('/:msgId', function(req, res) {
-  var message = req.app.locals.messages.find((msg) => msg.id == req.params.msgId);
   res.type('text/plain');
+
+  if(isNaN(req.params.msgId)) {
+    res.status(400).send("Expected integer for ID. Instead received: " + req.params.msgId);
+    return;
+  }
+
+  var message = req.app.locals.messages.find((msg) => msg.id == req.params.msgId);
 
   if(message == null) {
     res.status(404).send("No message was found for the given message ID.");
