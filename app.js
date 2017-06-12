@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  res.send('error: ' + err.message);
+  res.send(err.message);
 });
 
 module.exports = app;
