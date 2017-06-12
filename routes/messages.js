@@ -3,8 +3,7 @@ var router = express.Router();
 
 /* GET all messages. */
 router.get('/', function(req, res) {
-  res.type('application/json');
-  res.status(200).send(req.app.locals.messages);
+  res.status(200).json(req.app.locals.messages);
 });
 
 /* POST a new message */
@@ -39,8 +38,7 @@ router.post('/', function(req, res) {
   req.app.locals.messages.push(message);;
 
   var result = {id: messageId};
-  res.type('application/json');
-  res.status(201).send(result);
+  res.status(201).json(result);
 });
 
 /* DELETE all messages */
