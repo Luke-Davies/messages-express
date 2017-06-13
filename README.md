@@ -80,4 +80,6 @@ $ npm test
 
 ```
 
-
+---
+### Go Version
+Want to see the same thing implemented in Go? [Click here](https://github.com/Luke-Davies/go-messages)
