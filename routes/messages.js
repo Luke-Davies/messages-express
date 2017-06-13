@@ -27,8 +27,8 @@ router.post('/', function(req, res) {
   */
   var messageTxt = req.is("application/x-www-form-urlencoded") ? Object.keys(req.body)[0] : req.body;
 
-  if(messageTxt == "") {
-    res.status(400).send("No data provideds.")
+  if(messageTxt === undefined || messageTxt.length == 0) {
+    res.status(400).send("No data provided.")
     return;
   }
 
