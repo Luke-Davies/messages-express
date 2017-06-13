@@ -43,7 +43,7 @@ router.post('/', function(req, res) {
 
 /* DELETE all messages */
 router.delete('/', function(req, res) {
-  req.app.locals.messages = {};
+  req.app.locals.messages = [];
   res.status(204).send();
 });
 
