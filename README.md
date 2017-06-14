@@ -1,6 +1,6 @@
 # messages-express
 
-A simple messaging REST service implemented in node.js using the express genertor (with bits removed).
+A simple messaging REST service implemented in node.js using the express generator (with bits removed).
 The application allows you to store and retrieve messages via http.
 Messages are stored in memory and are lost when the server is stopped.
 
